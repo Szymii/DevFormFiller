@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "extension",
+  "description": "A basic example extension with only required keys",
+  "background": "",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting"],
+  "http_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "48": "white-48.png",
+    "128": "white-128.png"
+  }
+}

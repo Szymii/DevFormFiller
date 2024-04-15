@@ -8,7 +8,7 @@
     "default_popup": "index.html"
   },
   "permissions": ["scripting"],
-  "http_permissions": ["http://*/*", "https://*/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
     "48": "white-48.png",
     "128": "white-128.png"

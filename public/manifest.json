@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "version": "0.0.1",
-  "name": "extension",
-  "description": "A basic example extension with only required keys",
+  "name": "DevFormFiller",
+  "description": "DevFormFiller",
   "background": "",
   "action": {
     "default_popup": "index.html"

@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "SET NODE_ENV=development & vite build --watch",
+    "dev": "NODE_ENV=development vite build --watch",
+    "dev:win": "SET NODE_ENV=development & vite build --watch",
     "format": "pnpm biome format --write src",
     "lint": "pnpm biome lint src",
     "build": "tsc && vite build",

@@ -1,12 +1,4 @@
-<script setup lang="ts">
-  import Home from "./pages/Home.vue";
-  import Form from "./pages/Home.vue";
-
-  const routes = {
-    "/": Home,
-    "/form": Form,
-  };
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="text-3xl font-bold underline">vue test</div>

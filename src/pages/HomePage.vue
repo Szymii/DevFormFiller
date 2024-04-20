@@ -6,11 +6,11 @@ import PlayIcon from '@/assets/PlayIcon.vue';
 import IconButton from '@/components/IconButton.vue';
 const forms = getForms();
 
-const play = (id: string) => {
+const play = () => {
   //
 };
 
-const deleteForm = (id: string) => {
+const deleteForm = () => {
   //
 };
 
@@ -27,7 +27,7 @@ const editForm = (id: string) => {
         <IconButton
           :action="
             () => {
-              play(id);
+              play();
             }
           "
           :icon="PlayIcon"
@@ -43,7 +43,7 @@ const editForm = (id: string) => {
         <IconButton
           :action="
             () => {
-              deleteForm(id);
+              deleteForm();
             }
           "
           :icon="BinIcon"

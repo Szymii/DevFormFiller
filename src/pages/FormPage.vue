@@ -2,9 +2,9 @@
 import { getForm } from '@/app/getForm';
 import { getParams } from '@/utils/getParams';
 const params = getParams<{ id: string }>();
-const forms = getForm(params.id);
+const form = getForm(params.id);
 </script>
 
 <template>
-  <div>Form</div>
+  <div>{{ form?.name }}</div>
 </template>

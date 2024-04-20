@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start": "NODE_ENV=development vite",
+    "start:win": "SET NODE_ENV=development & vite",
     "dev": "NODE_ENV=development vite build --watch",
     "dev:win": "SET NODE_ENV=development & vite build --watch",
     "format": "prettier --write src/",

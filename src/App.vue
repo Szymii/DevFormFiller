@@ -17,7 +17,10 @@ window.addEventListener('hashchange', () => {
 });
 
 const currentView = computed(() => {
-  const currentRoute = (currentPath.value.slice(1) || '/') as RoutesType;
+  const regex = /#([^?]+)/;
+  const match = currentPath.value.match(regex);
+  const currentRoute = (match?.[1] || '/') as RoutesType;
+
   return routes[currentRoute];
 });
 </script>

@@ -8,7 +8,7 @@ export const getForms = () => {
     },
     {
       id: '1234',
-      name: 'Form2 with wery long name'
+      name: 'Form2 with wery long name with wery long name with wery long name'
     },
     {
       id: '1235',

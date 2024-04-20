@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getForm } from '@/app/getForm';
-const forms = getForm('123');
+import { getParams } from '@/utils/getParams';
+const params = getParams<{ id: string }>();
+const forms = getForm(params.id);
 </script>
 
 <template>

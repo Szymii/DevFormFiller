@@ -23,5 +23,7 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <component :is="currentView" />
+  <main class="bg-slate-800 h-screen text-white p-4">
+    <component :is="currentView" />
+  </main>
 </template>

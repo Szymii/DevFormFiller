@@ -6,8 +6,14 @@ import PlayIcon from '@/assets/PlayIcon.vue';
 import IconButton from '@/components/IconButton.vue';
 const forms = getForms();
 
-const play = () => {
-  console.log('test');
+const play = async () => {
+  const [tab] = await chrome.tabs.query({ active: true });
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id! },
+    func: () => {
+      console.log('test');
+    }
+  });
 };
 
 const deleteForm = () => {

@@ -29,7 +29,7 @@ export default {
     rollupOptions: {
       input: {
         popup: resolve(__dirname, 'index.html'),
-        // content: resolve(__dirname, 'src/pages/content/index.ts'),
+        content: resolve(__dirname, 'src/content/index.ts'),
         background: resolve(__dirname, 'src/background/index.ts')
       },
       output: {

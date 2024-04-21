@@ -3,13 +3,19 @@
   "version": "0.0.1",
   "name": "DevFormFiller",
   "description": "DevFormFiller",
-  "background": {
-    "service_worker": "background/index.js"
-  },
   "action": {
     "default_popup": "index.html"
   },
-  "permissions": ["scripting"],
+  "background": {
+    "service_worker": "background/index.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content/index.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "permissions": ["scripting", "activeTab"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
     "48": "white-48.png",

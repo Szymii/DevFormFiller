@@ -7,7 +7,7 @@ import IconButton from '@/components/IconButton.vue';
 const forms = getForms();
 
 const play = () => {
-  //
+  console.log('test');
 };
 
 const deleteForm = () => {
@@ -20,7 +20,7 @@ const editForm = (id: string) => {
 </script>
 
 <template>
-  <ul class="flex flex-col gap-4 min-w-[300px]">
+  <ul class="flex flex-col gap-4 min-w-[300px] pb-4">
     <li v-for="{ id, name } in forms" v-bind:key="id" class="border p-3 rounded-md">
       <p class="truncate">{{ name }}</p>
       <span class="flex mt-2 gap-3">

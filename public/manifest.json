@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "name": "DevFormFiller",
   "description": "DevFormFiller",
-  "background": "",
+  "background": {
+    "service_worker": "background/index.js"
+  },
   "action": {
     "default_popup": "index.html"
   },

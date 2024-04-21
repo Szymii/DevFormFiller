@@ -6,5 +6,5 @@ const form = getForm(params.id);
 </script>
 
 <template>
-  <div>{{ form?.name }}</div>
+  <div class="min-w-[300px]">{{ form?.name }}</div>
 </template>

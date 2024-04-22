@@ -14,6 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "uuid": "^9.0.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/chrome": "^0.0.266",
     "@types/node": "^20.12.5",
+    "@types/uuid": "^9.0.8",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",

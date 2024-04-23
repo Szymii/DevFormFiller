@@ -18,7 +18,7 @@ export const forms: Array<Form> = [
     name: 'Demo with test ids',
     fields: [
       {
-        identifier: 'test-input--test-id',
+        identifier: 'test-input-test-id',
         action: 'fill',
         value: 'test input value'
       }

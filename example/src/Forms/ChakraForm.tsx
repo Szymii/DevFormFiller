@@ -20,7 +20,9 @@ export const ChakraForm = () => {
         }}
       >
         <VStack spacing="6">
-          <TextField id="test-input-id" data-testid="test-input--test-id">Text input</TextField>
+          <TextField id="test-input-id" data-testid="test-input-test-id">
+            Text input
+          </TextField>
           <SelectField
             options={[
               { label: "", value: "" },

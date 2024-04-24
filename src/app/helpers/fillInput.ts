@@ -9,6 +9,8 @@ export const fillInput = async (id: string, value: string) => {
 
       if (element) {
         element.value = value;
+        const event = new Event('change', { bubbles: true });
+        element.dispatchEvent(event);
       }
     }
   });

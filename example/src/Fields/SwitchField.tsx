@@ -5,6 +5,7 @@ import {
   type SwitchProps,
 } from "@chakra-ui/react";
 import type { ReactNode } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface SwitchFieldProps extends SwitchProps {
   children: ReactNode;
@@ -14,12 +15,15 @@ interface SwitchFieldProps extends SwitchProps {
 export const SwitchField = ({
   children,
   isDisabled,
+  name,
   ...rest
 }: SwitchFieldProps) => {
+  const { register } = useFormContext();
+
   return (
     <FormControl display="flex" alignItems="center" isDisabled={isDisabled}>
       <FormLabel mb="0">{children}</FormLabel>
-      <Switch {...rest} />
+      <Switch {...rest} {...register(name!)} />
     </FormControl>
   );
 };

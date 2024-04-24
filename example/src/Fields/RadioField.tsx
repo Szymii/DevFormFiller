@@ -4,10 +4,12 @@ import {
   HStack,
   Radio,
   RadioGroup,
+  RadioProps,
 } from "@chakra-ui/react";
 import type { ReactNode } from "react";
+import { useFormContext } from "react-hook-form";
 
-interface RadioGroupFieldProps {
+interface RadioGroupFieldProps extends RadioProps {
   options: Array<{ label: string; value: string }>;
   children: ReactNode;
   defaultValue?: string;
@@ -19,14 +21,18 @@ export const RadioField = ({
   children,
   isDisabled,
   defaultValue,
+  name,
+  ...rest
 }: RadioGroupFieldProps) => {
+  const { register } = useFormContext();
+
   return (
     <FormControl isDisabled={isDisabled}>
       <FormLabel>{children}</FormLabel>
       <RadioGroup defaultValue={defaultValue}>
         <HStack spacing="24px">
           {options.map(({ label, value }) => (
-            <Radio value={value} key={value}>
+            <Radio value={value} key={value} {...register(name!)} {...rest}>
               {label}
             </Radio>
           ))}

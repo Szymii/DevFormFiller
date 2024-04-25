@@ -10,6 +10,11 @@ export const forms: Array<Form> = [
         identifier: 'test-input-id',
         action: 'fill',
         value: 'test input value'
+      },
+      {
+        identifier: 'test-select-id',
+        action: 'select',
+        value: 'option 1'
       }
     ]
   },
@@ -21,6 +26,11 @@ export const forms: Array<Form> = [
         identifier: 'test-input-test-id',
         action: 'fill',
         value: 'test input value'
+      },
+      {
+        identifier: 'test-select-test-id',
+        action: 'select',
+        value: 'option 2'
       }
     ]
   },

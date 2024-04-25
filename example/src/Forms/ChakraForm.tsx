@@ -33,6 +33,8 @@ export const ChakraForm = () => {
             </TextField>
             <SelectField
               name="select"
+              id="test-select-id"
+              data-testid="test-select-test-id"
               options={[
                 { label: "", value: "" },
                 { label: "option 1", value: "1" },

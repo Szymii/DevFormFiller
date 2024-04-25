@@ -43,7 +43,13 @@ export const ChakraForm = () => {
             >
               Select input
             </SelectField>
-            <SwitchField name="switch">Switch input</SwitchField>
+            <SwitchField
+              name="switch"
+              id="test-switch-id"
+              data-testid="test-switch-test-id"
+            >
+              Switch input
+            </SwitchField>
             <RadioField
               name="radio"
               options={[

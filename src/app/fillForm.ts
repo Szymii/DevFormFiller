@@ -1,4 +1,5 @@
 import { getForm } from './getForm';
+import { click } from './helpers/click';
 import { fillInput } from './helpers/fillInput';
 import { selectOption } from './helpers/selectOption';
 
@@ -14,7 +15,7 @@ export const fillForm = async (formId: string) => {
         case 'select':
           return await selectOption(field.identifier, field.value);
         case 'click':
-          return;
+          return await click(field.identifier);
         default:
           return; // unexpected input type notification
       }

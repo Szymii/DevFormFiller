@@ -26,7 +26,12 @@
         "waderyan.gitblame",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "yoavbls.pretty-ts-errors"
+        "yoavbls.pretty-ts-errors",
+        "Vue.volar",
+        "ms-vscode-remote.remote-wsl",
+        "ms-azuretools.vscode-docker",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode-remote.remote-containers"
       ]
     }
   }

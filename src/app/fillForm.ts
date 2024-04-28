@@ -8,7 +8,6 @@ export const fillForm = async (formId: string) => {
 
   if (form) {
     form.fields.forEach(async (field) => {
-      console.log(field);
       switch (field.action) {
         case 'fill':
           return await fillInput(field.identifier, field.value);

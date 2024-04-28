@@ -15,7 +15,7 @@
       "matches": ["http://*/*", "https://*/*"]
     }
   ],
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab", "storage"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
     "48": "white-48.png",

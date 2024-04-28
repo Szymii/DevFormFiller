@@ -46,5 +46,10 @@ export const forms: Array<Form> = [
     id: getUId(),
     name: 'Form with wery long name with wery long name with wery long name',
     fields: []
+  },
+  {
+    id: getUId(),
+    name: '',
+    fields: []
   }
 ];

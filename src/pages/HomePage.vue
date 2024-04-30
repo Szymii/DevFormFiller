@@ -6,10 +6,7 @@ import BinIcon from '@/assets/BinIcon.vue';
 import EditIcon from '@/assets/EditIcon.vue';
 import PlayIcon from '@/assets/PlayIcon.vue';
 import IconButton from '@/components/IconButton.vue';
-
-const deleteForm = () => {
-  //
-};
+import { deleteForm } from '@/app/deleteForm';
 
 const editForm = (id: string) => {
   window.location.hash = `#/form?id=${id}`;
@@ -23,7 +20,7 @@ const editForm = (id: string) => {
       <span class="flex mt-2 gap-3">
         <IconButton :action="() => fillForm(id)" :icon="PlayIcon" />
         <IconButton :action="() => editForm(id)" :icon="EditIcon" />
-        <IconButton :action="() => deleteForm()" :icon="BinIcon" />
+        <IconButton :action="() => deleteForm(id)" :icon="BinIcon" />
       </span>
     </li>
   </ul>

@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { getForm } from '@/app/getForm';
+import { useFormsStore } from '@/app/useFormsStore';
 import { getParams } from '@/utils/getParams';
+
+const state = useFormsStore();
+
 const params = getParams<{ id: string }>();
-const form = getForm(params.id);
+const form = state.getForm(params.id);
 </script>
 
 <template>

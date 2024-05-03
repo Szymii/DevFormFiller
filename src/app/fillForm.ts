@@ -1,10 +1,11 @@
-import { getForm } from './getForm';
 import { click } from './helpers/click';
 import { fillInput } from './helpers/fillInput';
 import { selectOption } from './helpers/selectOption';
+import { useFormsStore } from './useFormsStore';
 
 export const fillForm = async (formId: string) => {
-  const form = getForm(formId);
+  const state = useFormsStore();
+  const form = state.getForm(formId);
 
   if (form) {
     form.fields.forEach(async (field) => {

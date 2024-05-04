@@ -35,7 +35,6 @@ export const useFormsStore = defineStore('forms', () => {
 
     saveForms([...currentForms.value, newForm]);
     currentForms.value = [...currentForms.value, newForm];
-    console.log(currentForms.value);
   }
 
   function deleteForm(formId: string) {

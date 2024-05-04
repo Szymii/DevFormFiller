@@ -14,6 +14,7 @@ module.exports = {
   },
   ignorePatterns: ['example'],
   rules: {
+    'no-console': 'warn',
     '@typescript-eslint/no-explicit-any': 'error'
   }
 };

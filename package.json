@@ -6,8 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development vite",
     "start:win": "SET NODE_ENV=development & vite",
-    "dev": "NODE_ENV=development vite build --watch",
-    "dev:win": "SET NODE_ENV=development & vite build --watch",
+    "dev": "NODE_ENV=development vite build --watch --mode development",
+    "dev:win": "SET NODE_ENV=development & vite build --watch --mode development",
     "format": "prettier --write src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "build": "tsc && vite build",

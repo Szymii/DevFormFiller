@@ -1,4 +1,4 @@
-type Field =
+export type Field =
   | {
       identifier: string;
       action: 'click';

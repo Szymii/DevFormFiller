@@ -17,6 +17,11 @@ export const forms: Array<Form> = [
         value: ['option 1']
       },
       {
+        identifier: 'test-react-select-id',
+        action: 'select',
+        value: ['option 1', 'option 2']
+      },
+      {
         identifier: 'test-switch-id',
         action: 'click'
       }
@@ -35,6 +40,11 @@ export const forms: Array<Form> = [
         identifier: 'test-select-test-id',
         action: 'select',
         value: ['option 2']
+      },
+      {
+        identifier: 'test-react-select-test-id',
+        action: 'select',
+        value: ['option 1', 'option 2']
       },
       {
         identifier: 'test-switch-test-id',

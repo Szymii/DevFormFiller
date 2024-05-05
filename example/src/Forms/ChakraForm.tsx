@@ -47,13 +47,13 @@ export const ChakraForm = () => {
             <ReactSelectField
               name="react-select"
               id="test-react-select-id"
-              data-testid="test-react-select-test-id"
+              testid="test-react-select-test-id"
               options={[
                 { label: "option 1", value: "1" },
                 { label: "option 2", value: "2" },
                 { label: "option 3", value: "3" },
               ]}
-              // isMulti
+              isMulti
             >
               React select
             </ReactSelectField>
@@ -84,7 +84,6 @@ export const ChakraForm = () => {
             </CheckboxField>
           </VStack>
           <ButtonGroup mt={10}>
-            <Button type="reset">Reset</Button>
             <Button type="submit" colorScheme="blue">
               Submit
             </Button>

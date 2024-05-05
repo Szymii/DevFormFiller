@@ -10,7 +10,7 @@ interface SelectFieldProps {
   name: string;
   isMulti?: boolean;
   id: string;
-  "data-testid": string;
+  testid: string;
 }
 
 export const ReactSelectField = ({
@@ -19,12 +19,13 @@ export const ReactSelectField = ({
   children,
   name,
   isMulti,
+  testid,
   ...rest
 }: SelectFieldProps) => {
   const { control } = useFormContext();
 
   return (
-    <FormControl isDisabled={isDisabled}>
+    <FormControl isDisabled={isDisabled} data-testid={testid}>
       <FormLabel>{children}</FormLabel>
       <Controller
         name={name}

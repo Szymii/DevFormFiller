@@ -2,24 +2,46 @@ export const selectOption = async (id: string, values: string[]) => {
   const [tab] = await chrome.tabs.query({ active: true });
   chrome.scripting.executeScript({
     target: { tabId: tab.id! },
-    args: [id, values] as const,
-    func: (id, values) => {
-      const element = (document.getElementById(id) ||
-        document.querySelector(`[data-testid=${id}]`)) as HTMLSelectElement;
+    args: [id, JSON.parse(JSON.stringify(values)) as string[]] as const,
+    func: async (id, values) => {
+      const element = document.getElementById(id) || document.querySelector(`[data-testid=${id}]`);
 
-      if (element) {
+      // HTML select
+      if (element?.tagName === 'SELECT') {
+        const selectElement = element as HTMLSelectElement;
+
         values.forEach((value) => {
-          const options = element.options;
+          const options = selectElement.options;
           const option = Array.from(options).find(({ textContent }) =>
             textContent?.includes(value)
           );
 
           if (option) {
-            element.value = option.value;
+            selectElement.value = option.value;
             const event = new Event('change', { bubbles: true });
-            element.dispatchEvent(event);
+            selectElement.dispatchEvent(event);
           }
         });
+
+        return;
+      }
+
+      // React select
+      if (element) {
+        const reactSelect = element.querySelector('input');
+
+        if (!reactSelect) return;
+        const reactSelectInput = reactSelect as HTMLInputElement;
+
+        for (const value of values) {
+          await new Promise<void>((resolve) => setTimeout(resolve, 1));
+
+          reactSelectInput.value = value;
+          reactSelectInput.dispatchEvent(new Event('change', { bubbles: true }));
+          reactSelectInput.dispatchEvent(
+            new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })
+          );
+        }
       }
     }
   });

@@ -11,7 +11,7 @@ type Field =
   | {
       identifier: string;
       action: 'select';
-      value: string;
+      value: string[];
     };
 
 export interface Form {

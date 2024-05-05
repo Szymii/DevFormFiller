@@ -10,7 +10,9 @@
     "dev:win": "SET NODE_ENV=development & vite build --watch --mode development",
     "format": "prettier --write src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "build": "tsc && vite build",
+    "build": "type-check && vite build",
+    "type-check": "vue-tsc --build --force",
+    "type-check:watch": "vue-tsc --build --watch",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -42,6 +44,6 @@
     "vite": "^5.2.8",
     "vite-plugin-checker": "^0.6.4",
     "vite-tsconfig-paths": "^4.3.2",
-    "vue-tsc": "^2.0.11"
+    "vue-tsc": "^2.0.16"
   }
 }

@@ -11,6 +11,7 @@ import { SwitchField } from "../Fields/SwitchField";
 import { RadioField } from "../Fields/RadioField";
 import { CheckboxField } from "../Fields/CheckboxField";
 import { useForm, FormProvider } from "react-hook-form";
+import { ReactSelectField } from "../Fields/ReactSelectField";
 
 export const ChakraForm = () => {
   const methods = useForm();
@@ -43,6 +44,19 @@ export const ChakraForm = () => {
             >
               Select input
             </SelectField>
+            <ReactSelectField
+              name="react-select"
+              id="test-react-select-id"
+              data-testid="test-react-select-test-id"
+              options={[
+                { label: "option 1", value: "1" },
+                { label: "option 2", value: "2" },
+                { label: "option 3", value: "3" },
+              ]}
+              // isMulti
+            >
+              React select
+            </ReactSelectField>
             <SwitchField
               name="switch"
               id="test-switch-id"

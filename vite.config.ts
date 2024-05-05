@@ -7,7 +7,7 @@ export default {
   plugins: [
     vue(),
     checker({
-      typescript: true,
+      // vueTsc: true, // https://github.com/fi3ework/vite-plugin-checker/issues/306
       eslint: {
         lintCommand: 'eslint "./src"'
       },

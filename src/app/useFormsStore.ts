@@ -4,6 +4,7 @@ import { getUId } from '@/utils/getUId';
 import { saveForms } from './helpers/saveForms';
 import { forms as mocks } from '@/utils/mocks/forms.mock';
 import { ref } from 'vue';
+import { downloadJSON } from './helpers/downloadJSON';
 
 function getInitialForms() {
   const raw = localStorage.getItem('forms');
@@ -51,5 +52,24 @@ export const useFormsStore = defineStore('forms', () => {
     saveForms(forms);
   }
 
-  return { currentForms, getForm, addForm, deleteForm, editForm };
+  function exportForm(formId: string) {
+    const form = currentForms.value.find(({ id }) => id === formId);
+    if (form) {
+      downloadJSON(form);
+    }
+  }
+
+  function importForm() {
+    //
+  }
+
+  return {
+    currentForms,
+    getForm,
+    addForm,
+    deleteForm,
+    editForm,
+    exportForm,
+    import: importForm
+  };
 });

@@ -84,7 +84,12 @@ export const ChakraForm = () => {
             </CheckboxField>
           </VStack>
           <ButtonGroup mt={10}>
-            <Button type="submit" colorScheme="blue">
+            <Button
+              id="submit-btn"
+              data-testid="submit-test-btn"
+              type="submit"
+              colorScheme="blue"
+            >
               Submit
             </Button>
           </ButtonGroup>

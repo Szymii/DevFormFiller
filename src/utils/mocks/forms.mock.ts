@@ -24,6 +24,10 @@ export const forms: Array<Form> = [
       {
         identifier: 'test-switch-id',
         action: 'click'
+      },
+      {
+        identifier: 'submit-btn',
+        action: 'click'
       }
     ]
   },
@@ -48,6 +52,10 @@ export const forms: Array<Form> = [
       },
       {
         identifier: 'test-switch-test-id',
+        action: 'click'
+      },
+      {
+        identifier: 'submit-test-btn',
         action: 'click'
       }
     ]

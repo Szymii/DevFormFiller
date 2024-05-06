@@ -1,6 +1,6 @@
 export const fillInput = async (id: string, value: string) => {
   const [tab] = await chrome.tabs.query({ active: true });
-  chrome.scripting.executeScript({
+  return await chrome.scripting.executeScript({
     target: { tabId: tab.id! },
     args: [id, value],
     func: (id, value) => {

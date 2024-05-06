@@ -1,6 +1,6 @@
 export const selectOption = async (id: string, values: string[]) => {
   const [tab] = await chrome.tabs.query({ active: true });
-  chrome.scripting.executeScript({
+  return await chrome.scripting.executeScript({
     target: { tabId: tab.id! },
     args: [id, JSON.parse(JSON.stringify(values)) as string[]] as const,
     func: async (id, values) => {
@@ -22,7 +22,6 @@ export const selectOption = async (id: string, values: string[]) => {
             selectElement.dispatchEvent(event);
           }
         });
-
         return;
       }
 

@@ -8,18 +8,24 @@ export const fillForm = async (formId: string) => {
   const form = state.getForm(formId);
 
   if (form) {
-    form.fields.forEach(async (field) => {
+    for (const field of form.fields) {
       switch (field.action) {
-        case 'fill':
-          return await fillInput(field.identifier, field.value);
-        case 'select':
-          return await selectOption(field.identifier, field.value);
-        case 'click':
-          return await click(field.identifier);
+        case 'fill': {
+          await fillInput(field.identifier, field.value);
+          break;
+        }
+        case 'select': {
+          await selectOption(field.identifier, field.value);
+          break;
+        }
+        case 'click': {
+          await click(field.identifier);
+          break;
+        }
         default:
-          return; // unexpected input type notification
+          break; // unexpected input type notification
       }
-    });
+    }
   }
 
   // cant find form notification

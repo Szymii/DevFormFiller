@@ -24,7 +24,6 @@ const { fields, append, remove } = useFieldArray<Field>('fields');
       <select
         class="bg-slate-600 p-1"
         v-model="field.value.action"
-        type="text"
         :name="`${field.name}.name`"
         v-bind="field.attrs"
       >

@@ -38,9 +38,18 @@ export const useFormsStore = defineStore('forms', () => {
   }
 
   function deleteForm(formId: string) {
-    saveForms(currentForms.value.filter(({ id }) => id !== formId));
-    currentForms.value = currentForms.value.filter(({ id }) => id !== formId);
+    const forms = currentForms.value.filter(({ id }) => id !== formId);
+
+    saveForms(forms);
+    currentForms.value = forms;
   }
 
-  return { currentForms, getForm, addForm, deleteForm };
+  function editForm(formId: string, formData: Form) {
+    const forms = currentForms.value.map((form) => (form.id === formId ? formData : form));
+
+    currentForms.value = forms;
+    saveForms(forms);
+  }
+
+  return { currentForms, getForm, addForm, deleteForm, editForm };
 });

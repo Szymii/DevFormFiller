@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Form } from '@/app/types/Form';
 import { useFormsStore } from '@/app/useFormsStore';
 import FormFields from '@/components/FormFields.vue';
 import TextField from '@/components/TextField.vue';
@@ -11,12 +12,13 @@ const form = state.getForm(params.id);
 
 const { handleSubmit } = useForm({
   initialValues: {
+    id: form?.id,
     name: form?.name,
     fields: form?.fields
   },
   onSubmit(data) {
-    // eslint-disable-next-line no-console
-    console.log(data);
+    state.editForm(form?.id!, data as Form);
+    window.history.back();
   }
 });
 </script>

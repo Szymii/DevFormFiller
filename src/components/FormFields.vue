@@ -52,7 +52,12 @@ const { fields, append, remove } = useFieldArray<Field>('fields');
         v-bind="field.attrs"
       />
     </label>
-    <IconButton class="col-span-1 self-end" :action="() => remove(index)" :icon="BinIcon" />
+    <IconButton
+      class="col-span-1 self-end"
+      title="Remove fields"
+      :action="() => remove(index)"
+      :icon="BinIcon"
+    />
   </div>
   <button
     type="button"

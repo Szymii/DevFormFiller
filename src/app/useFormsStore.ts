@@ -59,8 +59,11 @@ export const useFormsStore = defineStore('forms', () => {
     }
   }
 
-  function importForm() {
-    //
+  function importForm(newForm: Form) {
+    // parse
+    // remove id (add new)
+    saveForms([...currentForms.value, newForm]);
+    currentForms.value = [...currentForms.value, newForm];
   }
 
   return {
@@ -70,6 +73,6 @@ export const useFormsStore = defineStore('forms', () => {
     deleteForm,
     editForm,
     exportForm,
-    import: importForm
+    importForm
   };
 });

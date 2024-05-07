@@ -66,7 +66,7 @@ const importFile = () => {
       :action="() => fileInput?.click()"
       :icon="JSONIcon"
       title="Import JSON"
-      class="w-[50px] p-2 h-[50px] border rounded-md"
+      class="p-2 w-12 h-11 border rounded-md"
     />
   </div>
 </template>

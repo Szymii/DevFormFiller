@@ -39,3 +39,30 @@ $ cd example
 ```bash
 $ pnpm dev
 ```
+
+### Workflow
+
+The form schema can be edited via the extension UI or by uploading a custom JSON file
+
+```json
+{
+  "name": "schema name",
+  "fields": [
+    {
+      "identifier": "field-id-1",
+      "action": "fill",
+      "value": "test input value"
+    },
+    {
+      "identifier": "field-id-2",
+      "action": "select",
+      "value": ["option 1"]
+    },
+    {
+      "identifier": "field-id-3",
+      "action": "click"
+    },
+  ]
+}
+
+```

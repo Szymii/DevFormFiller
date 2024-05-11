@@ -5,6 +5,8 @@ import { saveForms } from './helpers/saveForms';
 import { forms as mocks } from '@/utils/mocks/forms.mock';
 import { ref } from 'vue';
 import { downloadJSON } from './helpers/downloadJSON';
+import { parse } from 'valibot';
+import { FormSchema } from './FormSchema';
 
 function getInitialForms() {
   const raw = localStorage.getItem('forms');
@@ -60,10 +62,15 @@ export const useFormsStore = defineStore('forms', () => {
   }
 
   function importForm(newForm: Form) {
-    // parse
-    // remove id (add new)
-    saveForms([...currentForms.value, newForm]);
-    currentForms.value = [...currentForms.value, newForm];
+    try {
+      const parsedForm = parse(FormSchema, newForm);
+      const withUid = { id: getUId(), ...parsedForm };
+
+      saveForms([...currentForms.value, withUid]);
+      currentForms.value = [...currentForms.value, withUid];
+    } catch (e) {
+      // error notification
+    }
   }
 
   return {

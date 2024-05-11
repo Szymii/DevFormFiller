@@ -15,6 +15,10 @@
       "matches": ["http://*/*", "https://*/*"]
     }
   ],
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
   "permissions": ["scripting", "activeTab", "storage"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],
   "icons": {

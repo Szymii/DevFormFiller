@@ -30,7 +30,8 @@ export default {
       input: {
         popup: resolve(__dirname, 'index.html'),
         content: resolve(__dirname, 'src/content/index.ts'),
-        background: resolve(__dirname, 'src/background/index.ts')
+        background: resolve(__dirname, 'src/background/index.ts'),
+        options: resolve(__dirname, 'src/options/index.html')
       },
       output: {
         dir: 'dist',

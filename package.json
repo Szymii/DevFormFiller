@@ -1,6 +1,6 @@
 {
   "name": "extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vorms/core": "^1.1.0",
+    "lodash.kebabcase": "^4.1.1",
     "pinia": "^2.1.7",
     "uuid": "^9.0.1",
     "valibot": "^0.30.0",
@@ -26,6 +27,7 @@
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/chrome": "^0.0.266",
+    "@types/lodash.kebabcase": "^4.1.9",
     "@types/node": "^20.12.5",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-vue": "^5.0.4",

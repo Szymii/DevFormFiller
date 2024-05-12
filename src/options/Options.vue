@@ -1,8 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
+import type { Options } from '@/app/types/Options';
 import { onMounted, ref } from 'vue';
 
-const settings = ref<{ kebab: boolean }>({ kebab: false });
+const settings = ref<Options>({ kebab: false });
 
 onMounted(() => {
   chrome.storage.sync.get('settings', (data) => {

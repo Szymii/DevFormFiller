@@ -1,14 +1,29 @@
 <script setup lang="ts">
 import type { Field } from '@/app/types/Form';
-import { useFieldArray } from '@vorms/core';
+import { useFieldArray, useFormContext } from '@vorms/core';
 import IconButton from './IconButton.vue';
 import BinIcon from '@/assets/BinIcon.vue';
+import KebabIcon from '@/assets/KebabIcon.vue';
+import { useOptionsStore } from '@/app/useOptionsStore';
+import { onMounted } from 'vue';
+import kebabCase from 'lodash.kebabcase';
 
+const { setFieldValue, values } = useFormContext();
 const { fields, append, remove } = useFieldArray<Field>('fields');
+const options = useOptionsStore();
+
+onMounted(async () => {
+  await options.getOptions();
+});
+
+const transformNameToKebab = (name: string, index: number) => {
+  const fieldValue = values.fields[index].identifier;
+  setFieldValue(`${name}.identifier`, kebabCase(fieldValue));
+};
 </script>
 
 <template>
-  <div class="grid grid-cols-10 gap-2" v-for="(field, index) in fields" :key="field.key">
+  <div class="grid grid-cols-11 gap-2" v-for="(field, index) in fields" :key="field.key">
     <label class="col-span-3 flex flex-col">
       Field id
       <input
@@ -19,6 +34,14 @@ const { fields, append, remove } = useFieldArray<Field>('fields');
         v-bind="field.attrs"
       />
     </label>
+    <div class="self-end" v-if="options.settings?.kebab">
+      <IconButton
+        class="pb-0 -ml-2"
+        title="Transform to kebab case"
+        :action="() => transformNameToKebab(field.name, index)"
+        :icon="KebabIcon"
+      />
+    </div>
     <label class="col-span-3 flex flex-col">
       Action
       <select
@@ -53,7 +76,7 @@ const { fields, append, remove } = useFieldArray<Field>('fields');
       />
     </label>
     <IconButton
-      class="col-span-1 self-end"
+      class="self-end pb-0 -ml-2"
       title="Remove fields"
       :action="() => remove(index)"
       :icon="BinIcon"

@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue';
 import HomePage from './pages/HomePage.vue';
 import FormPage from './pages/FormPage.vue';
+import Toaster from './components/Toaster.vue';
 
 type RoutesType = keyof typeof routes;
 
@@ -28,5 +29,6 @@ const currentView = computed(() => {
 <template>
   <main class="bg-slate-800 min-h-screen text-white p-4">
     <component :is="currentView" />
+    <Toaster />
   </main>
 </template>

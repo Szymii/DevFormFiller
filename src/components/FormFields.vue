@@ -36,7 +36,7 @@ const transformNameToKebab = (name: string, index: number) => {
     </label>
     <div class="self-end" v-if="options.settings?.kebab">
       <IconButton
-        class="pb-0 -ml-2"
+        class="-ml-2 pb-0"
         title="Transform to kebab case"
         :action="() => transformNameToKebab(field.name, index)"
         :icon="KebabIcon"
@@ -76,7 +76,7 @@ const transformNameToKebab = (name: string, index: number) => {
       />
     </label>
     <IconButton
-      class="self-end pb-0 -ml-2"
+      class="-ml-2 self-end pb-0"
       title="Remove fields"
       :action="() => remove(index)"
       :icon="BinIcon"
@@ -84,7 +84,7 @@ const transformNameToKebab = (name: string, index: number) => {
   </div>
   <button
     type="button"
-    class="border p-2 w-full rounded-md"
+    class="w-full rounded-md border p-2"
     @click="() => append({ action: 'click', identifier: '' })"
   >
     Add field

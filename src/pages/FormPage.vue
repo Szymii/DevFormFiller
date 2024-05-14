@@ -24,9 +24,9 @@ const { handleSubmit } = useForm({
 </script>
 
 <template>
-  <form class="flex flex-col gap-4 min-w-[300px]" @submit="handleSubmit">
+  <form class="flex min-w-[300px] flex-col gap-4" @submit="handleSubmit">
     <TextField name="name"> Form name </TextField>
     <FormFields />
-    <button type="submit" class="border p-3 w-full rounded-md">Submit</button>
+    <button type="submit" class="w-full rounded-md border p-3">Submit</button>
   </form>
 </template>

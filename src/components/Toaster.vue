@@ -12,7 +12,7 @@ const toastStore = useToastsStore();
       <li
         v-for="toast in toastStore.toasts"
         :class="
-          cn('px-2 py-1 rounded border min-h-14', {
+          cn('min-h-14 rounded border px-2 py-1', {
             'bg-red-300': toast.status === 'error',
             'border-red-400': toast.status === 'error',
             'bg-green-300': toast.status === 'success',

@@ -27,7 +27,7 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <main class="bg-slate-800 min-h-screen text-white p-4">
+  <main class="min-h-screen bg-slate-800 p-4 text-white">
     <component :is="currentView" />
     <Toaster />
   </main>

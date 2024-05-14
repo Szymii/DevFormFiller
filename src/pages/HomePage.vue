@@ -40,14 +40,14 @@ const importFile = () => {
 </script>
 
 <template>
-  <ul class="flex flex-col gap-4 min-w-[300px] pb-4">
+  <ul class="flex min-w-[300px] flex-col gap-4 pb-4">
     <li
       v-for="({ id, name }, index) in state.currentForms"
       v-bind:key="id"
-      class="border p-3 rounded-md"
+      class="rounded-md border p-3"
     >
       <p class="truncate">{{ name || `Form ${index + 1}` }}</p>
-      <span class="flex mt-2 gap-3">
+      <span class="mt-2 flex gap-3">
         <IconButton :action="() => fillForm(id)" title="Play" :icon="PlayIcon" />
         <IconButton :action="() => editForm(id)" title="Edit" :icon="EditIcon" />
         <IconButton
@@ -60,13 +60,13 @@ const importFile = () => {
     </li>
   </ul>
   <div class="flex items-center gap-4">
-    <button class="border p-3 w-full rounded-md" @click="() => state.addForm()">Add form</button>
+    <button class="w-full rounded-md border p-3" @click="() => state.addForm()">Add form</button>
     <input type="file" @change="importFile" ref="fileInput" class="hidden" accept=".json" />
     <IconButton
       :action="() => fileInput?.click()"
       :icon="JSONIcon"
       title="Import JSON"
-      class="p-2 w-12 h-11 border rounded-md"
+      class="h-11 w-12 rounded-md border p-2"
     />
   </div>
 </template>

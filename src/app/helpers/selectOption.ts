@@ -27,7 +27,7 @@ export const selectOption = async (id: string, values: string[]) => {
 
       // React select
       if (element) {
-        const reactSelect = element.querySelector('input');
+        const reactSelect = element.querySelector('input') || element;
 
         if (!reactSelect) return;
         const reactSelectInput = reactSelect as HTMLInputElement;

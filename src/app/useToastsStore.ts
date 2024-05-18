@@ -24,7 +24,7 @@ export const useToastsStore = defineStore('toasts', {
 
       setTimeout(() => {
         this.toasts = this.toasts.filter((t) => t.id !== toast.id);
-      }, timeout ?? 6000);
+      }, timeout ?? 3000);
     },
     success(payload: ToastPayload) {
       this.updateState(payload, 'success');

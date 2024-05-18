@@ -62,15 +62,11 @@ export const useFormsStore = defineStore('forms', () => {
   }
 
   function importForm(newForm: Form) {
-    try {
-      const parsedForm = parse(FormSchema, newForm);
-      const withUid = { id: getUId(), ...parsedForm };
+    const parsedForm = parse(FormSchema, newForm);
+    const withUid = { id: getUId(), ...parsedForm };
 
-      saveForms([...currentForms.value, withUid]);
-      currentForms.value = [...currentForms.value, withUid];
-    } catch (e) {
-      // error notification
-    }
+    saveForms([...currentForms.value, withUid]);
+    currentForms.value = [...currentForms.value, withUid];
   }
 
   return {

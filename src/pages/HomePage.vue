@@ -7,8 +7,11 @@ import PlayIcon from '@/assets/PlayIcon.vue';
 import JSONIcon from '@/assets/JSONIcon.vue';
 import IconButton from '@/components/IconButton.vue';
 import { ref } from 'vue';
+import { useToastsStore } from '@/app/useToastsStore';
+import { ValiError, flatten } from 'valibot';
 
 const state = useFormsStore();
+const toast = useToastsStore();
 const fileInput = ref<HTMLInputElement>();
 
 const editForm = (id: string) => {
@@ -27,11 +30,22 @@ const importFile = () => {
       if (typeof reader.result === 'string') {
         const jsonData = JSON.parse(reader.result);
         state.importForm(jsonData);
-        // success notification
+        toast.success({
+          title: 'File imported'
+        });
+
+        return;
       }
-      // failure notification
-    } catch {
-      // failure notification
+      toast.error({
+        title: 'File not imported',
+        description: 'Wrong file type'
+      });
+    } catch (e) {
+      const error = e as unknown as ValiError;
+      toast.error({
+        title: 'File not imported',
+        description: JSON.stringify(flatten(error))
+      });
     }
   };
 
@@ -51,7 +65,11 @@ const importFile = () => {
         <IconButton :action="() => fillForm(id)" title="Play" :icon="PlayIcon" />
         <IconButton :action="() => editForm(id)" title="Edit" :icon="EditIcon" />
         <IconButton
-          :action="() => state.deleteForm(id) /* success notification */"
+          :action="
+            () => {
+              state.deleteForm(id);
+            }
+          "
           title="Delete"
           :icon="BinIcon"
         />

@@ -22,6 +22,11 @@ export const forms: Array<Form> = [
         value: ['option 1', 'option 2']
       },
       {
+        identifier: 'test-react-select-2-id',
+        action: 'select',
+        value: ['option 6']
+      },
+      {
         identifier: 'test-switch-id',
         action: 'click'
       },
@@ -46,9 +51,9 @@ export const forms: Array<Form> = [
         value: ['option 2']
       },
       {
-        identifier: 'test-react-select-test-id',
+        identifier: 'test-react-select-test-2-id',
         action: 'select',
-        value: ['option 1', 'option 2']
+        value: ['option 6']
       },
       {
         identifier: 'test-switch-test-id',

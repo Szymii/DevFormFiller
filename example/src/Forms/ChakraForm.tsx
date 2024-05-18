@@ -57,6 +57,18 @@ export const ChakraForm = () => {
             >
               React select
             </ReactSelectField>
+            <ReactSelectField
+              name="react-select-2"
+              id="test-react-select-2-id"
+              testid="test-react-select-test-2-id"
+              options={[
+                { label: "option 4", value: "4" },
+                { label: "option 5", value: "5" },
+                { label: "option 6", value: "6" },
+              ]}
+            >
+              React select 2
+            </ReactSelectField>
             <SwitchField
               name="switch"
               id="test-switch-id"

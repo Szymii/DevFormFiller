@@ -66,3 +66,10 @@ The form schema can be edited via the extension UI or by uploading a custom JSON
 }
 
 ```
+
+### In next iterations
+- [ ] Support for async react select
+- [ ] Ability to add timeout between
+- [ ] Dragable elements during schema editing 
+
+
